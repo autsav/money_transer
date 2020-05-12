@@ -14,7 +14,7 @@ class RenameNameInUsersTable extends Migration
     public function up()
     {
         Schema::table('users', function (Blueprint $table) {
-            $table->renameColumn('name', 'fullname');
+            $table->renameColumn('name', 'firstname');
             $table->string('lastname');
             $table->foreignId('location_id');
             $table->foreignId('type_id');
