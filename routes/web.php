@@ -22,10 +22,11 @@ Route::get('/dashboard', function () {
 // Admin auth routes
 
 Route::get('/admin/login', 'admin\LoginController@showLoginForm')->name('admin.login');
-Route::post('/admin/loggedin', 'admin\LoginController@login')->name('adminLogin');
+Route::post('/admin/login', 'admin\LoginController@login')->name('adminLogin');
 Route::post('/admin/logout', 'admin\LoginController@logout')->name('admin.logout');
+Route::get('/admin/dashboard', 'admin\DashboardController@index')->name('dashboard');
 
 // Admin Routes
-Route::prefix("admin")->name("admin.")->middleware("auth:user")->group(function(){
-	Route::get('/dashboard', 'admin\DashboardController@index')->name('dashboard');
-});
+// Route::prefix("admin")->name("admin.")->middleware("auth:admin")->group(function(){
+// 	Route::get('/dashboard', 'admin\DashboardController@index')->name('dashboard');
+// });
