@@ -3,9 +3,10 @@
 use Illuminate\Support\Facades\Route;
 
 // Frontend Routes
-Route::get('/', function () {
-    return view('welcome');
-});
+Route::get('/', 'HomeController@index')->name('home');
+Route::get('/about-us', 'HomeController@about')->name('about');
+Route::get('/help', 'HomeController@help')->name('help');
+Route::get('/contact-us', 'HomeController@contact')->name('contact');
 
 // User auth routes
 Auth::routes();
