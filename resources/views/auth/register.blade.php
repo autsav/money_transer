@@ -36,9 +36,27 @@
                                 <form id="loginForm" method="POST" action="{{ route('register') }}">
                                     @csrf
                                     <div class="form-group">
-                                        <label for="fullName">Full Name</label>
-                                        <input type="text" class="form-control @error('name') is-invalid @enderror" id="fullName" name="name" placeholder="Enter Your Name" name="name" value="{{ old('name') }}" required autocomplete="name" autofocus>
-                                        @error('name')
+                                        <label for="fullName">First Name</label>
+                                        <input type="text" class="form-control @error('firstname') is-invalid @enderror" id="firstname" name="firstname" placeholder="Enter Your First Name" name="firstname" value="{{ old('firstname') }}" required autocomplete="firstname" autofocus>
+                                        @error('firstname')
+                                            <span class="invalid-feedback" role="alert">
+                                                <strong>{{ $message }}</strong>
+                                            </span>
+                                        @enderror
+                                    </div>
+                                     <div class="form-group">
+                                        <label for="lastname">Last Name</label>
+                                        <input type="text" class="form-control @error('lastname') is-invalid @enderror" id="lastname" name="lastname" placeholder="Enter Your Last Name" name="lastname" value="{{ old('lastname') }}" required autocomplete="lastname" autofocus>
+                                        @error('lastname')
+                                            <span class="invalid-feedback" role="alert">
+                                                <strong>{{ $message }}</strong>
+                                            </span>
+                                        @enderror
+                                    </div>
+                                     <div class="form-group">
+                                        <label for="username">Username</label>
+                                        <input type="text" class="form-control @error('username') is-invalid @enderror" id="username" name="username" placeholder="Enter Your Username" name="username" value="{{ old('username') }}" required autocomplete="username" autofocus>
+                                        @error('username')
                                             <span class="invalid-feedback" role="alert">
                                                 <strong>{{ $message }}</strong>
                                             </span>
