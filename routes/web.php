@@ -2,6 +2,12 @@
 
 use Illuminate\Support\Facades\Route;
 
+Route::get('/config-cache', function () {
+    \Artisan::call('config:cache');
+    return "Configuration Cache Cleared";
+});
+
+
 // Frontend Routes
 Route::get('/', 'HomeController@index')->name('home');
 Route::get('/about-us', 'HomeController@about')->name('about');
