@@ -1,7 +1,16 @@
 <?php
 
 return [
-
+         "driver" => "smtp",
+  "host" => "smtp.mailtrap.io",
+  "port" => 2525,
+  "from" => array(
+      "address" => "autsav77@gmail.com",
+      "name" => "Seya Exchange"
+  ),
+  "username" => "90f50601436b20",
+  "password" => "bcf18ae0bf99bd",
+  "sendmail" => "/usr/sbin/sendmail -bs"
     /*
     |--------------------------------------------------------------------------
     | Default Mailer
@@ -13,7 +22,7 @@ return [
     |
     */
 
-    'default' => env('MAIL_MAILER', 'smtp'),
+    // 'default' => env('MAIL_MAILER', 'smtp'),
 
     /*
     |--------------------------------------------------------------------------
@@ -33,43 +42,43 @@ return [
     |
     */
 
-    'mailers' => [
-        'smtp' => [
-            'transport' => 'smtp',
-            'host' => env('MAIL_HOST', 'smtp.mailgun.org'),
-            'port' => env('MAIL_PORT', 587),
-            'encryption' => env('MAIL_ENCRYPTION', 'tls'),
-            'username' => env('MAIL_USERNAME'),
-            'password' => env('MAIL_PASSWORD'),
-            'timeout' => null,
-        ],
+    // 'mailers' => [
+    //     'smtp' => [
+    //         'transport' => 'smtp',
+    //         'host' => env('MAIL_HOST', 'smtp.mailgun.org'),
+    //         'port' => env('MAIL_PORT', 587),
+    //         'encryption' => env('MAIL_ENCRYPTION', 'tls'),
+    //         'username' => env('MAIL_USERNAME'),
+    //         'password' => env('MAIL_PASSWORD'),
+    //         'timeout' => null,
+    //     ],
 
-        'ses' => [
-            'transport' => 'ses',
-        ],
+    //     'ses' => [
+    //         'transport' => 'ses',
+    //     ],
 
-        'mailgun' => [
-            'transport' => 'mailgun',
-        ],
+    //     'mailgun' => [
+    //         'transport' => 'mailgun',
+    //     ],
 
-        'postmark' => [
-            'transport' => 'postmark',
-        ],
+    //     'postmark' => [
+    //         'transport' => 'postmark',
+    //     ],
 
-        'sendmail' => [
-            'transport' => 'sendmail',
-            'path' => '/usr/sbin/sendmail -bs',
-        ],
+    //     'sendmail' => [
+    //         'transport' => 'sendmail',
+    //         'path' => '/usr/sbin/sendmail -bs',
+    //     ],
 
-        'log' => [
-            'transport' => 'log',
-            'channel' => env('MAIL_LOG_CHANNEL'),
-        ],
+    //     'log' => [
+    //         'transport' => 'log',
+    //         'channel' => env('MAIL_LOG_CHANNEL'),
+    //     ],
 
-        'array' => [
-            'transport' => 'array',
-        ],
-    ],
+    //     'array' => [
+    //         'transport' => 'array',
+    //     ],
+    // ],
 
     /*
     |--------------------------------------------------------------------------
@@ -82,10 +91,10 @@ return [
     |
     */
 
-    'from' => [
-        'address' => env('MAIL_FROM_ADDRESS', 'hello@example.com'),
-        'name' => env('MAIL_FROM_NAME', 'Example'),
-    ],
+    // 'from' => [
+    //     'address' => env('MAIL_FROM_ADDRESS', 'hello@example.com'),
+    //     'name' => env('MAIL_FROM_NAME', 'Example'),
+    // ],
 
     /*
     |--------------------------------------------------------------------------
@@ -98,12 +107,12 @@ return [
     |
     */
 
-    'markdown' => [
-        'theme' => 'default',
+    // 'markdown' => [
+    //     'theme' => 'default',
 
-        'paths' => [
-            resource_path('views/vendor/mail'),
-        ],
-    ],
+    //     'paths' => [
+    //         resource_path('views/vendor/mail'),
+    //     ],
+    // ],
 
 ];

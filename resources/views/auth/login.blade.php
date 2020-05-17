@@ -3,7 +3,7 @@
 @section('content')
     <div id="main-wrapper" class="h-100">
         <div class="container-fluid px-0 h-100">
-            <div class="row no-gutters h-100">
+            <div class="row no-gutters h-100"> 
                 <!-- Welcome Text
                 ============================================= -->
                 <div class="col-md-6">
@@ -34,18 +34,18 @@
                         <div class="row">
                             <div class="col-11 col-lg-9 col-xl-8 mx-auto">
                                 <h3 class="font-weight-400 mb-4">Log In</h3>
-                                <form id="loginForm" method="POST" action="{{ route('login') }}">
+                                <form id="loginForm"  action="{{route('loggedin')}}" method="POST">
                                     @csrf
                                     <div class="form-group">
                                         <label for="emailAddress">Email Address</label>
-                                        <input type="email" class="form-control @error('email') is-invalid @enderror" id="emailAddress" required placeholder="Enter Your Email" value="{{ old('email') }}" autocomplete="email" autofocus>
+                                        <input type="email" class="form-control @error('email') is-invalid @enderror" name="email" id="emailAddress" required placeholder="Enter Your Email" value="{{ old('email') }}" autocomplete="email" autofocus>
                                         @error('email')
                                             <span class="invalid-feedback" role="alert">{{ $message }}</span>
                                         @enderror
                                     </div>
                                     <div class="form-group">
                                         <label for="loginPassword">Password</label>
-                                        <input type="password" class="form-control @error('password') is-invalid @enderror" id="loginPassword" required placeholder="Enter Password" autocomplete="current-password">
+                                        <input type="password" name="password" class="form-control @error('password') is-invalid @enderror" id="loginPassword" required placeholder="Enter Password" autocomplete="current-password">
                                         @error('password')
                                             <span class="invalid-feedback" role="alert">{{ $message }}</span>
                                         @enderror
