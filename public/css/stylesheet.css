@@ -2785,3 +2785,7 @@ a.bg-primary:focus, a.bg-primary:hover, button.bg-primary:focus, button.bg-prima
 .bg-theme{
   background-color: #290a07 !important
 }
+
+.error{
+  color: #dc3545!important;
+}

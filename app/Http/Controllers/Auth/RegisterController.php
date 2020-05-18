@@ -40,12 +40,6 @@ class RegisterController extends Controller
     {
         $this->middleware('guest');
     }
-       public function showRegisterForm()
-    { 
-        // return view('admin.login');
-        return view('auth.register', ['url' => 'user']);
-
-    }
 
     /**
      * Get a validator for an incoming registration request.
@@ -54,7 +48,7 @@ class RegisterController extends Controller
      * @return \Illuminate\Contracts\Validation\Validator
      */
     protected function validator(array $data)
-    {   
+    {
         return Validator::make($data, [
             'firstname' => ['required', 'string', 'max:255'],
             'lastname' => ['required', 'string', 'max:255'],
@@ -62,9 +56,6 @@ class RegisterController extends Controller
             'email' => ['required', 'string', 'email', 'max:255', 'unique:users'],
             'password' => ['required', 'string', 'min:8', 'confirmed'],
         ]);
-             
-        
-     
     }
 
     /**
@@ -82,10 +73,5 @@ class RegisterController extends Controller
             'email' => $data['email'],
             'password' => Hash::make($data['password']),
         ]);
-
-        if($user){
-            return view('auth.verify')->with('user',$user);
-        }
     }
-
 }

@@ -56,6 +56,7 @@
                     <!-- Primary Navigation end -->
                 </div>
                 <div class="header-column justify-content-end login-buttons-right">
+                    @guest
                     <!-- Login & Signup Link
                     ============================== -->
                     <nav class="login-signup navbar navbar-expand">
@@ -65,6 +66,17 @@
                         </ul>
                     </nav>
                     <!-- Login & Signup Link end -->
+                    @else
+                    <nav class="login-signup navbar navbar-expand">
+                        <ul class="navbar-nav">
+                            <li><a href="#">Settings</a> </li>
+                            <li class="align-items-center h-auto ml-sm-3">
+                                <a class="btn btn-outline-primary shadow-none d-none d-sm-block" href="#" onclick="event.preventDefault(); document.getElementById('logout-form').submit()">Sign out</a>
+                                <form action="{{ route('logout') }}" method="post" id="logout-form" style="display: none">@csrf</form>
+                            </li>
+                        </ul>
+                    </nav>
+                    @endguest
                 </div>
             </div>
         </div>

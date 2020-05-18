@@ -15,10 +15,8 @@ class User extends Authenticatable implements MustVerifyEmail
      *
      * @var array
      */
-    protected $guard = 'user';
-
     protected $fillable = [
-        'firstname','username','password','status','email','lastname','location_id','type_id','role',
+        'firstname','lastname','username','password','status','email','location_id','type_id',
     ];
 
     /**
@@ -38,7 +36,4 @@ class User extends Authenticatable implements MustVerifyEmail
     protected $casts = [
         'email_verified_at' => 'datetime',
     ];
-     public function roles(){
-        return $this->belongsTo('App\Role_user', 'role_user','user_id', 'role_id');
-    }
 }
