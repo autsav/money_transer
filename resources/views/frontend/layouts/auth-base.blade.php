@@ -21,9 +21,9 @@
     <link rel="stylesheet" type="text/css" href="{{asset('css/stylesheet.css')}}" />
     <style>
         @media(min-width:992px){
-            body{
-                over
-            }
+            /*body{
+                overflow: hidden;
+            }*/
             .hero-wrap {
                 position: fixed;
                 top: 0;

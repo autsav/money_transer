@@ -23,10 +23,14 @@ Route::get('/', 'HomeController@index')->name('home');
 Route::get('/about-us', 'HomeController@about')->name('about');
 Route::get('/help', 'HomeController@help')->name('help');
 Route::get('/contact-us', 'HomeController@contact')->name('contact');
+Route::post('/getExchangeResult', 'HomeController@getExchangeResult')->name('getExchangeResult');
 
 // User auth routes
 Auth::routes(['verify' => true]);
-Route::get('/dashboard', 'DashboardController@index')->middleware('verified')->name('dashboard');
+Route::middleware(['auth','verified'])->group(function() {
+    Route::get('/send-money', 'UserController@send_money')->name('send-money');
+    Route::get('/dashboard', 'UserController@index')->name('dashboard');
+});
 
 
 
