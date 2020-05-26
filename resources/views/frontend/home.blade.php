@@ -20,143 +20,9 @@
                             <div class="bg-white rounded shadow-md p-4">
                                 <h3 class="text-5 text-center">Send Money</h3>
                                 <hr class="mb-4">
-                                <form id="form-send-money" method="post">
-                                    <div class="form-group from">
-                                        <label for="youSend">You Send</label>
-                                        <div class="input-group">
-                                            <div class="input-group-prepend"> <span class="input-group-text">$</span> </div>
-                                            <input type="number" class="form-control" data-bv-field="youSend" id="youSend" step="0.001">
-                                            <div class="input-group-append"> <span class="input-group-text p-0">
-                        <select id="youSendCurrency" data-style="custom-select bg-transparent border-0" data-container="body" data-live-search="true" class="selectpicker form-control bg-transparent" required="">
-                          <optgroup label="Popular Currency">
-                          <option data-icon="currency-flag currency-flag-usd mr-1" data-subtext="United States dollar" selected="selected">USD</option>
-                          <option data-icon="currency-flag currency-flag-aud mr-1" data-subtext="Australian dollar">AUD</option>
-                          <option data-icon="currency-flag currency-flag-inr mr-1" data-subtext="Indian rupee">INR</option>
-                          </optgroup>
-                          <option data-divider="true"></option>
-                          <optgroup label="Other Currency">
-                          <option data-icon="currency-flag currency-flag-aed mr-1" data-subtext="United Arab Emirates dirham">AED</option>
-                          <option data-icon="currency-flag currency-flag-ars mr-1" data-subtext="Argentine peso">ARS</option>
-                          <option data-icon="currency-flag currency-flag-aud mr-1" data-subtext="Australian dollar">AUD</option>
-                          <option data-icon="currency-flag currency-flag-bdt mr-1" data-subtext="Bangladeshi taka">BDT</option>
-                          <option data-icon="currency-flag currency-flag-bgn mr-1" data-subtext="Bulgarian lev">BGN</option>
-                          <option data-icon="currency-flag currency-flag-brl mr-1" data-subtext="Brazilian real">BRL</option>
-                          <option data-icon="currency-flag currency-flag-cad mr-1" data-subtext="Canadian dollar">CAD</option>
-                          <option data-icon="currency-flag currency-flag-chf mr-1" data-subtext="Swiss franc">CHF</option>
-                          <option data-icon="currency-flag currency-flag-clp mr-1" data-subtext="Chilean peso">CLP</option>
-                          <option data-icon="currency-flag currency-flag-cny mr-1" data-subtext="Chinese yuan">CNY</option>
-                          <option data-icon="currency-flag currency-flag-czk mr-1" data-subtext="Czech koruna">CZK</option>
-                          <option data-icon="currency-flag currency-flag-dkk mr-1" data-subtext="Danish krone">DKK</option>
-                          <option data-icon="currency-flag currency-flag-egp mr-1" data-subtext="Egyptian pound">EGP</option>
-                          <option data-icon="currency-flag currency-flag-eur mr-1" data-subtext="Euro">EUR</option>
-                          <option data-icon="currency-flag currency-flag-gbp mr-1" data-subtext="British pound">GBP</option>
-                          <option data-icon="currency-flag currency-flag-gel mr-1" data-subtext="Georgian lari">GEL</option>
-                          <option data-icon="currency-flag currency-flag-ghs mr-1" data-subtext="Ghanaian cedi">GHS</option>
-                          <option data-icon="currency-flag currency-flag-hkd mr-1" data-subtext="Hong Kong dollar">HKD</option>
-                          <option data-icon="currency-flag currency-flag-hrk mr-1" data-subtext="Croatian kuna">HRK</option>
-                          <option data-icon="currency-flag currency-flag-huf mr-1" data-subtext="Hungarian forint">HUF</option>
-                          <option data-icon="currency-flag currency-flag-idr mr-1" data-subtext="Indonesian rupiah">IDR</option>
-                          <option data-icon="currency-flag currency-flag-ils mr-1" data-subtext="Israeli shekel">ILS</option>
-                          <option data-icon="currency-flag currency-flag-inr mr-1" data-subtext="Indian rupee">INR</option>
-                          <option data-icon="currency-flag currency-flag-jpy mr-1" data-subtext="Japanese yen">JPY</option>
-                          <option data-icon="currency-flag currency-flag-kes mr-1" data-subtext="Kenyan shilling">KES</option>
-                          <option data-icon="currency-flag currency-flag-krw mr-1" data-subtext="South Korean won">KRW</option>
-                          <option data-icon="currency-flag currency-flag-lkr mr-1" data-subtext="Sri Lankan rupee">LKR</option>
-                          <option data-icon="currency-flag currency-flag-mad mr-1" data-subtext="Moroccan dirham">MAD</option>
-                          <option data-icon="currency-flag currency-flag-mxn mr-1" data-subtext="Mexican peso">MXN</option>
-                          <option data-icon="currency-flag currency-flag-myr mr-1" data-subtext="Malaysian ringgit">MYR</option>
-                          <option data-icon="currency-flag currency-flag-ngn mr-1" data-subtext="Nigerian naira">NGN</option>
-                          <option data-icon="currency-flag currency-flag-nok mr-1" data-subtext="Norwegian krone">NOK</option>
-                          <option data-icon="currency-flag currency-flag-npr mr-1" data-subtext="Nepalese rupee">NPR</option>
-                          <option data-icon="currency-flag currency-flag-nzd mr-1" data-subtext="New Zealand dollar">NZD</option>
-                          <option data-icon="currency-flag currency-flag-pen mr-1" data-subtext="Peruvian nuevo sol">PEN</option>
-                          <option data-icon="currency-flag currency-flag-php mr-1" data-subtext="Philippine peso">PHP</option>
-                          <option data-icon="currency-flag currency-flag-pkr mr-1" data-subtext="Pakistani rupee">PKR</option>
-                          <option data-icon="currency-flag currency-flag-pln mr-1" data-subtext="Polish złoty">PLN</option>
-                          <option data-icon="currency-flag currency-flag-ron mr-1" data-subtext="Romanian leu">RON</option>
-                          <option data-icon="currency-flag currency-flag-rub mr-1" data-subtext="Russian rouble">RUB</option>
-                          <option data-icon="currency-flag currency-flag-sek mr-1" data-subtext="Swedish krona">SEK</option>
-                          <option data-icon="currency-flag currency-flag-sgd mr-1" data-subtext="Singapore dollar">SGD</option>
-                          <option data-icon="currency-flag currency-flag-thb mr-1" data-subtext="Thai baht">THB</option>
-                          <option data-icon="currency-flag currency-flag-try mr-1" data-subtext="Turkish lira">TRY</option>
-                          <option data-icon="currency-flag currency-flag-uah mr-1" data-subtext="Ukrainian hryvnia">UAH</option>
-                          <option data-icon="currency-flag currency-flag-ugx mr-1" data-subtext="Ugandan shilling">UGX</option>
-                          <option data-icon="currency-flag currency-flag-vnd mr-1" data-subtext="Vietnamese dong">VND</option>
-                          <option data-icon="currency-flag currency-flag-zar mr-1" data-subtext="South African rand">ZAR</option>
-                          </optgroup>
-                        </select>
-                        </span> </div>
-                                        </div>
-                                    </div>
-                                    <div class="form-group to">
-                                        <label for="recipientGets">Recipient Gets</label>
-                                        <div class="input-group">
-                                            <div class="input-group-prepend"> <span class="input-group-text">$</span> </div>
-                                            <input type="number" class="form-control" data-bv-field="recipientGets" id="recipientGets" step="0.001">
-                                            <div class="input-group-append"> <span class="input-group-text p-0">
-                        <select id="recipientCurrency" data-style="custom-select bg-transparent border-0" data-container="body" data-live-search="true" class="selectpicker form-control bg-transparent" required="">
-                          <optgroup label="Popular Currency">
-                          <option data-icon="currency-flag currency-flag-usd mr-1" data-subtext="United States dollar">USD</option>
-                          <option data-icon="currency-flag currency-flag-aud mr-1" data-subtext="Australian dollar" selected="selected" >AUD</option>
-                          <option data-icon="currency-flag currency-flag-inr mr-1" data-subtext="Indian rupee">INR</option>
-                          </optgroup>
-                          <option data-divider="true"></option>
-                          <optgroup label="Other Currency">
-                          <option data-icon="currency-flag currency-flag-aed mr-1" data-subtext="United Arab Emirates dirham">AED</option>
-                          <option data-icon="currency-flag currency-flag-ars mr-1" data-subtext="Argentine peso">ARS</option>
-                          <option data-icon="currency-flag currency-flag-aud mr-1" data-subtext="Australian dollar">AUD</option>
-                          <option data-icon="currency-flag currency-flag-bdt mr-1" data-subtext="Bangladeshi taka">BDT</option>
-                          <option data-icon="currency-flag currency-flag-bgn mr-1" data-subtext="Bulgarian lev">BGN</option>
-                          <option data-icon="currency-flag currency-flag-brl mr-1" data-subtext="Brazilian real">BRL</option>
-                          <option data-icon="currency-flag currency-flag-cad mr-1" data-subtext="Canadian dollar">CAD</option>
-                          <option data-icon="currency-flag currency-flag-chf mr-1" data-subtext="Swiss franc">CHF</option>
-                          <option data-icon="currency-flag currency-flag-clp mr-1" data-subtext="Chilean peso">CLP</option>
-                          <option data-icon="currency-flag currency-flag-cny mr-1" data-subtext="Chinese yuan">CNY</option>
-                          <option data-icon="currency-flag currency-flag-czk mr-1" data-subtext="Czech koruna">CZK</option>
-                          <option data-icon="currency-flag currency-flag-dkk mr-1" data-subtext="Danish krone">DKK</option>
-                          <option data-icon="currency-flag currency-flag-egp mr-1" data-subtext="Egyptian pound">EGP</option>
-                          <option data-icon="currency-flag currency-flag-eur mr-1" data-subtext="Euro">EUR</option>
-                          <option data-icon="currency-flag currency-flag-gbp mr-1" data-subtext="British pound">GBP</option>
-                          <option data-icon="currency-flag currency-flag-gel mr-1" data-subtext="Georgian lari">GEL</option>
-                          <option data-icon="currency-flag currency-flag-ghs mr-1" data-subtext="Ghanaian cedi">GHS</option>
-                          <option data-icon="currency-flag currency-flag-hkd mr-1" data-subtext="Hong Kong dollar">HKD</option>
-                          <option data-icon="currency-flag currency-flag-hrk mr-1" data-subtext="Croatian kuna">HRK</option>
-                          <option data-icon="currency-flag currency-flag-huf mr-1" data-subtext="Hungarian forint">HUF</option>
-                          <option data-icon="currency-flag currency-flag-idr mr-1" data-subtext="Indonesian rupiah">IDR</option>
-                          <option data-icon="currency-flag currency-flag-ils mr-1" data-subtext="Israeli shekel">ILS</option>
-                          <option data-icon="currency-flag currency-flag-inr mr-1" data-subtext="Indian rupee">INR</option>
-                          <option data-icon="currency-flag currency-flag-jpy mr-1" data-subtext="Japanese yen">JPY</option>
-                          <option data-icon="currency-flag currency-flag-kes mr-1" data-subtext="Kenyan shilling">KES</option>
-                          <option data-icon="currency-flag currency-flag-krw mr-1" data-subtext="South Korean won">KRW</option>
-                          <option data-icon="currency-flag currency-flag-lkr mr-1" data-subtext="Sri Lankan rupee">LKR</option>
-                          <option data-icon="currency-flag currency-flag-mad mr-1" data-subtext="Moroccan dirham">MAD</option>
-                          <option data-icon="currency-flag currency-flag-mxn mr-1" data-subtext="Mexican peso">MXN</option>
-                          <option data-icon="currency-flag currency-flag-myr mr-1" data-subtext="Malaysian ringgit">MYR</option>
-                          <option data-icon="currency-flag currency-flag-ngn mr-1" data-subtext="Nigerian naira">NGN</option>
-                          <option data-icon="currency-flag currency-flag-nok mr-1" data-subtext="Norwegian krone">NOK</option>
-                          <option data-icon="currency-flag currency-flag-npr mr-1" data-subtext="Nepalese rupee">NPR</option>
-                          <option data-icon="currency-flag currency-flag-nzd mr-1" data-subtext="New Zealand dollar">NZD</option>
-                          <option data-icon="currency-flag currency-flag-pen mr-1" data-subtext="Peruvian nuevo sol">PEN</option>
-                          <option data-icon="currency-flag currency-flag-php mr-1" data-subtext="Philippine peso">PHP</option>
-                          <option data-icon="currency-flag currency-flag-pkr mr-1" data-subtext="Pakistani rupee">PKR</option>
-                          <option data-icon="currency-flag currency-flag-pln mr-1" data-subtext="Polish złoty">PLN</option>
-                          <option data-icon="currency-flag currency-flag-ron mr-1" data-subtext="Romanian leu">RON</option>
-                          <option data-icon="currency-flag currency-flag-rub mr-1" data-subtext="Russian rouble">RUB</option>
-                          <option data-icon="currency-flag currency-flag-sek mr-1" data-subtext="Swedish krona">SEK</option>
-                          <option data-icon="currency-flag currency-flag-sgd mr-1" data-subtext="Singapore dollar">SGD</option>
-                          <option data-icon="currency-flag currency-flag-thb mr-1" data-subtext="Thai baht">THB</option>
-                          <option data-icon="currency-flag currency-flag-try mr-1" data-subtext="Turkish lira">TRY</option>
-                          <option data-icon="currency-flag currency-flag-uah mr-1" data-subtext="Ukrainian hryvnia">UAH</option>
-                          <option data-icon="currency-flag currency-flag-ugx mr-1" data-subtext="Ugandan shilling">UGX</option>
-                          <option data-icon="currency-flag currency-flag-vnd mr-1" data-subtext="Vietnamese dong">VND</option>
-                          <option data-icon="currency-flag currency-flag-zar mr-1" data-subtext="South African rand">ZAR</option>
-                          </optgroup>
-                        </select>
-                        </span> </div>
-                                        </div>
-                                    </div>
-                                    <p class="text-muted mb-1">Total fees  - <span class="font-weight-500">7.21 USD</span></p>
-                                    <p class="text-muted">The current exchange rate is <span class="font-weight-500">1 <span id="sendCurr"></span> = <span id="receiveRate"></span> <span id="receiveCurr"></span></span></p>
+                                <form id="form-send-money" method="get" action="{{route("send-money")}}">
+                                    @include('frontend.common.exchange-block')
+                                    <p class="text-muted">The current exchange rate is <span class="font-weight-500">1 <span class="sendCurr"></span> = <span id="receiveRate"></span> <span id="receiveCurr"></span></span></p>
                                     <button class="btn btn-primary btn-block">Continue</button>
                                 </form>
                             </div>
@@ -406,64 +272,14 @@
 @endsection
 
 @section('scripts')
+    <script src="{{asset('js/exchange-block.js')}}"></script>
     <script>
-        let exchangeRatesUrl = "https://api.exchangeratesapi.io/latest";
-        const precisionLimit = 3;
-        const currency3 = "USD";
-        const fee = 7.21;
+        const initSendVal = 1000;
+        const exchangeRoute = '{{route('getExchangeResult')}}';
+        const csrf_token = "{{csrf_token()}}";
 
         $(function(){
-            $("#youSend").val(1000).trigger("keyup");
+            $("#youSend").val(initSendVal).trigger("keyup");
         });
-
-        $(document).on("change","#youSendCurrency, #recipientCurrency",function(){
-            convertCurrency(this);
-        });
-
-        $(document).on("keyup","#youSend, #recipientGets",function(){
-            convertCurrency(this);
-        });
-
-        function convertCurrency(instance){
-            let currency1 = $("#youSendCurrency").val();
-            let currency2 = $("#recipientCurrency").val();
-            let youSendInstance = $("#youSend");
-            let recipientGetsInstance = $("#recipientGets");
-
-            getExchangeRate(currency1, currency2, currency3).then(function(rateObj){
-                const rate = rateObj.rate1;
-                const totalFee = rateObj.rate2*fee;
-
-                $("#sendCurr").text(currency1);
-                $("#receiveCurr").text(currency2);
-                $("#receiveRate").text(rate.toFixed(precisionLimit));
-
-                // console.log(currency1,currency2,rate);
-                if($(instance).attr("id") !== "recipientGets"){
-                    let youSend = parseFloat(youSendInstance.val());
-                    recipientGetsInstance.val((youSend*rate - totalFee).toFixed(precisionLimit));
-                }else{
-                    let recipientGets = parseFloat(recipientGetsInstance.val());
-                    youSendInstance.val((recipientGets*(1/rate) - totalFee).toFixed(precisionLimit));
-                }
-            }).catch(err=>{
-                alert(err);
-            });
-        }
-
-        function getExchangeRate(currency1, currency2, currency3){
-            return new Promise((resolve,reject) => {
-                $.get(exchangeRatesUrl, function(response){
-                    if(response){
-                        let r1 = response.rates[currency1];
-                        let r2 = response.rates[currency2];
-                        let r3 = response.rates[currency3];
-                        resolve({"rate1":r2/r1, "rate2": r2/r3});
-                    }else{
-                        reject("Something went wrong!");
-                    }
-                });
-            });
-        }
     </script>
 @endsection

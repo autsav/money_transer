@@ -20,6 +20,7 @@
     <link rel="stylesheet" type="text/css" href="{{asset('vendor/bootstrap-select/css/bootstrap-select.css')}}" />
     <link rel="stylesheet" type="text/css" href="{{asset('vendor/currency-flags/css/currency-flags.min.css')}}" />
     <link rel="stylesheet" type="text/css" href="{{asset('vendor/owl.carousel/assets/owl.carousel.min.css')}}" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.0.0/animate.min.css"/>
     @yield('styles')
     <link rel="stylesheet" type="text/css" href="{{asset('css/stylesheet.css')}}" />
 </head>
@@ -69,7 +70,7 @@
                     @else
                     <nav class="login-signup navbar navbar-expand">
                         <ul class="navbar-nav">
-                            <li><a href="#">Settings</a> </li>
+                            <li><a href="{{route('dashboard')}}">My Account</a></li>
                             <li class="align-items-center h-auto ml-sm-3">
                                 <a class="btn btn-outline-primary shadow-none d-none d-sm-block" href="#" onclick="event.preventDefault(); document.getElementById('logout-form').submit()">Sign out</a>
                                 <form action="{{ route('logout') }}" method="post" id="logout-form" style="display: none">@csrf</form>

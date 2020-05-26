@@ -2778,14 +2778,69 @@ a.bg-primary:focus, a.bg-primary:hover, button.bg-primary:focus, button.bg-prima
 
 
 /*custom styles*/
+/*#header li a{
+  text-transform: uppercase;
+}*/
+
 .login-buttons-right{
-  max-width: 230px;
+  max-width: 300px;
 }
 
 .bg-theme{
   background-color: #290a07 !important
 }
 
-.error{
+.error, .invalid-feedback{
   color: #dc3545!important;
+}
+
+.invalid-feedback{
+    font-size: 100%;
+    font-weight: normal;
+}
+
+#form-send-money label:not(.error){
+  text-transform: uppercase;
+  font-weight: 500;
+  font-size: 12px;
+  margin-bottom: 0;
+}
+
+#form-send-money .input-group-append .input-group-text {
+  border-color: #dae1e3;
+  background-color: #dae1e3;
+}
+
+#form-send-money .input-group-append button, #youSend, #recipientGets{
+  color: #290a07;
+  font-weight: 500;
+}
+
+#youSend:focus, #recipientGets:focus{
+  box-shadow: none !important;
+  border-color: #290a075c;
+}
+
+.bs-searchbox, .bs-actionsbox, .bs-donebutton {
+  padding: 6px 12px;
+}
+
+.bootstrap-select .form-control:not(.form-control-sm) {
+  padding: .35rem .96rem;
+}
+
+#form-send-money .form-control:not(.form-control-sm){
+  padding: .90rem .96rem;
+}
+
+.custom-select:not(.custom-select-sm).border-0 {
+  height: 3.30rem;
+}
+
+.bootstrap-select .dropdown-item{
+  padding: .6rem 1.5rem;
+}
+
+.bootstrap-select .dropdown-menu li a span.text{
+  line-height: 14px;
 }

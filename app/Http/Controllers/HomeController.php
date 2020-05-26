@@ -2,13 +2,22 @@
 
 namespace App\Http\Controllers;
 
+use App\ExchangeRate;
 use Illuminate\Http\Request;
 
 class HomeController extends BaseController
 {
     public function index()
     {
-        return view('frontend.home');
+        $currencies = ExchangeRate::pluck("currency_code");
+        return view('frontend.home')->with([
+            "currencies" => $currencies,
+            "currencySubText" => $this->currencySubText,
+            "popularCurrency" => $this->popularCurrency,
+            "defaultFromCurrency" => $this->defaultFromCurrency,
+            "defaultToCurrency" => $this->defaultToCurrency
+            ]
+        );
     }
 
     public function about()
@@ -24,5 +33,45 @@ class HomeController extends BaseController
     public function contact()
     {
         return view('frontend.contact');
+    }
+
+    public function getExchangeResult(Request $request){
+        $data = $request->all();
+
+        $amount = $data['amount'];
+        $from = $data['from'];
+        $to = $data['to'];
+        $reverse = isset($data['reverse']) ? $data['reverse'] : false;
+        $fee = 0.009; //0.9% fee
+
+        if($amount){
+            $exchangeRates = ExchangeRate::where('currency_code',$from)->orWhere('currency_code',$to)->pluck('rate','currency_code');
+            if(count($exchangeRates)===2 || ($from === $to)){
+                $r1 = $exchangeRates[$from];
+                $r2 = $exchangeRates[$to];
+                $exr = $r2/$r1;
+
+                if($reverse){
+                    $result = $amount/($exr*(1-$fee));
+                    $feeAmount = $result * $fee;
+                }else{
+                    $feeAmount = $amount*$fee;
+                    $result = $exr*($amount-$feeAmount);
+                }
+
+                return response()->json([
+                    "success"=>true,
+                    "body"=> [
+                        "rate" => round($exr, 3),
+                        "result" => round($result, 3),
+                        "feeAmount" => round($feeAmount, 3)
+                    ]
+                ]);
+            }
+        }
+        return response()->json([
+            "success"=>false,
+            "body"=>null
+        ]);
     }
 }
