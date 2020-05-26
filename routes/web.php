@@ -10,12 +10,12 @@ Route::get('/config-cache', function () {
 
 // Frontend Routes
 Route::get('/', 'HomeController@index')->name('home');
-// Route::POST('/login', 'Auth\LoginController@showLoginForm')->name('login');
-// Route::get('/register', 'Auth\RegisterController@showRegisterForm')->name('register');
+Route::POST('/login', 'Auth\LoginController@showLoginForm')->name('login');
+Route::get('/register', 'Auth\RegisterController@showRegisterForm')->name('register');
 
-// Route::POST('/loggedin', 'Auth\LoginController@login')->name('loggedin');
-// Route::get('/register', 'RegisterController@store')->name('register');
-// Route::get('/verification', 'VerificationrController@index')->name('verification');
+Route::POST('/loggedin', 'Auth\LoginController@login')->name('loggedin');
+Route::get('/register', 'RegisterController@store')->name('register');
+Route::get('/verification', 'VerificationrController@index')->name('verification');
 
 
 
@@ -36,9 +36,9 @@ Route::get('/dashboard', 'DashboardController@index')->middleware('verified')->n
 
 // Admin auth routes
 
-/*Route::get('/admin/login', 'admin\LoginController@showLoginForm')->name('admin.login');
+Route::get('/admin/login', 'admin\LoginController@showLoginForm')->name('admin.login');
 Route::post('/admin/login', 'admin\LoginController@login')->name('adminLogin');
-Route::post('/admin/logout', 'admin\LoginController@logout')->name('admin.logout');
+Route::get('/admin/logout', 'admin\LoginController@logout')->name('admin.logout');
 Route::get('/admin/dashboard', 'admin\DashboardController@index')->name('admin.dashboard');
 Route::redirect('/admin', '/admin/dashboard');
 
@@ -53,20 +53,25 @@ Route::get('/dashboard/admins', 'admin\AdminController@index')->name('dashboard.
 Route::post('/dashboard/admins/store', 'admin\AdminController@store')->name('admins.store');
 Route::post('/dashboard/admins/json', 'admin\AdminController@getadminJson')->name('admins.json');
 Route::get('/dashboard/admins/delete/{id}', 'admin\AdminController@destroy')->name('admin.delete');
-Route::get('/dashboard/admins/edit/{id}','admin\AdminController@edit')->name('admin.edit');*/
+Route::get('/dashboard/admins/edit/{id}','admin\AdminController@edit')->name('admin.edit');
 
+Route::get('/dashboard/transactions', 'admin\TransactionController@index')->name('dashboard.transactions');
+Route::post('/dashboard/transactions/store', 'admin\TransactionController@store')->name('transactions.store');
+Route::post('/dashboard/transactions/json', 'admin\TransactionController@gettransactionJson')->name('transactions.json');
+Route::get('/dashboard/transactions/delete/{id}', 'admin\TransactionController@destroy')->name('admin.delete');
+Route::get('/dashboard/transactions/edit/{id}','admin\TransactionController@edit')->name('admin.edit');
 
 // Admin Routes
-Route::prefix('/admin')->name('admin.')->namespace('Admin')->group(function(){
-    Route::redirect('/', '/admin/dashboard');
-    Route::get('/login', 'LoginController@showLoginForm')->name('login');
-    Route::post('/login', 'LoginController@login');
-    Route::post('/logout', 'LoginController@logout')->name('logout');
+// Route::prefix('/admin')->name('admin.')->namespace('Admin')->group(function(){
+//     Route::redirect('/', '/admin/dashboard');
+//     Route::get('/login', 'LoginController@showLoginForm')->name('login');
+//     Route::post('/login', 'LoginController@login');
+//     Route::post('/logout', 'LoginController@logout')->name('logout');
 
-    Route::middleware('auth:admin')->group(function(){
-        Route::get('/dashboard','DashboardController@index')->name('dashboard');
-    });
-});
+//     Route::middleware('auth:admin')->group(function(){
+//         Route::get('/dashboard','DashboardController@index')->name('dashboard');
+//     });
+// });
 
 // Route::prefix("admin")->name("admin.")->middleware("auth:admin")->group(function(){
 //     Route::redirect('/', '/dashboard');
@@ -75,7 +80,7 @@ Route::prefix('/admin')->name('admin.')->namespace('Admin')->group(function(){
 //     Route::post('/logout', 'admin\LoginController@logout')->name('logout');
 
 //users
-/*     Route::get('/users', 'admin\UserController@index')->name('users');
+     Route::get('/users', 'admin\UserController@index')->name('users');
      Route::post('/users/store', 'admin\UserController@store')->name('users.store');
      Route::post('/users/json', 'admin\UserController@getuserJson')->name('users.json');
      Route::get('/users/delete/{id}', 'admin\UserController@destroy')->name('users.delete');
@@ -85,5 +90,5 @@ Route::prefix('/admin')->name('admin.')->namespace('Admin')->group(function(){
      Route::post('/admins/store', 'admin\AdminController@store')->name('admins.store');
      Route::post('/admins/json', 'admin\AdminController@getadminJson')->name('admins.json');
      Route::get('/admins/delete/{id}', 'admin\AdminController@destroy')->name('admin.delete');
-     Route::get('/admins/edit/{id}','admin\AdminController@edit')->name('admin.edit');*/
+     Route::get('/admins/edit/{id}','admin\AdminController@edit')->name('admin.edit');
 //});
