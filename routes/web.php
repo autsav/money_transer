@@ -10,12 +10,12 @@ Route::get('/config-cache', function () {
 
 // Frontend Routes
 Route::get('/', 'HomeController@index')->name('home');
-Route::POST('/login', 'Auth\LoginController@showLoginForm')->name('login');
+/*Route::POST('/login', 'Auth\LoginController@showLoginForm')->name('login');
 Route::get('/register', 'Auth\RegisterController@showRegisterForm')->name('register');
 
 Route::POST('/loggedin', 'Auth\LoginController@login')->name('loggedin');
 Route::get('/register', 'RegisterController@store')->name('register');
-Route::get('/verification', 'VerificationrController@index')->name('verification');
+Route::get('/verification', 'VerificationrController@index')->name('verification');*/
 
 
 
