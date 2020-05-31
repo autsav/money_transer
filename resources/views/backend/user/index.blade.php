@@ -27,7 +27,7 @@
                     <th>SN</th>
                     <th>@lang('user.customer_id')</th>
                     <th>@lang('user.first_name')</th>
-                    <th>@lang('user.middle_name')</th>
+                    <!-- <th>@lang('user.middle_name')</th> -->
                     <th>@lang('user.last_name')</th>
                     <th>@lang('user.email')</th>
                     <th>@lang('user.gender')</th>
@@ -69,10 +69,10 @@
         <label for=''>@lang('user.first_name')<span style="color: red">*</span></label>
         <input id='first_name' type='text' class='form-control' name='first_name'>
         </div>
-          <div class='form-group'>
+        <!--   <div class='form-group'>
         <label for=''>@lang('user.middle_name')<span style="color: red">*</span></label>
         <input id='middle_name' type='text' class='form-control' name='middle_name'>
-        </div>
+        </div> -->
             <div class='form-group'>
         <label for=''>@lang('user.last_name')<span style="color: red">*</span></label>
         <input id='last_name' type='text' class='form-control' name='last_name'>
@@ -196,10 +196,10 @@
                 return meta.row + meta.settings._iDisplayStart + 1;
               },name: "sn", searchable: false },
           
-          { data: "customer_id",name: "customer_id"},
-          { data: "first_name",name: "first_name"},
-          { data: "middle_name",name: "middle_name"},
-          { data: "last_name",name: "last_name"},
+          { data: "id",name: "customer_id"},
+          { data: "firstname",name: "first_name"},
+          // { data: "middlename",name: "middle_name"},
+          { data: "lastname",name: "last_name"},
           { data: "email",name: "email"},
           { data: "gender",name: "gender"},
           { data: "mobile",name: "mobile"},

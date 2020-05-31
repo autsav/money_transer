@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class ExchangeRates extends Migration
+class Removefullname extends Migration
 {
     /**
      * Run the migrations.
@@ -13,10 +13,8 @@ class ExchangeRates extends Migration
      */
     public function up()
     {
-        Schema::create('exchange_rates', function (Blueprint $table) {
-            $table->string('currency_code', 4)->unique();
-            $table->float('rate');
-            $table->dateTime('last_updated_at');
+        Schema::table('transactions', function($table){
+            $table->dropColumn('fullname');
         });
     }
 
@@ -27,6 +25,8 @@ class ExchangeRates extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('exchange_rates');
+        Schema::table('transactions', function($table){
+            $table->integer('fullname');
+        });
     }
 }

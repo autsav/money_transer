@@ -7,6 +7,8 @@ use Illuminate\Foundation\Auth\AuthenticatesUsers;
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Session;
+
 
 
 class LoginController extends Controller
@@ -62,8 +64,13 @@ class LoginController extends Controller
     }
 
     public function logout(Request $request)
-    {
-        dd("logout admin...");
+    {   
+
+        Auth::logout();
+            Session::flush();
+
+  return redirect('/');
+        // dd("logout admin...");
         // $this->guard()->logout();
 
         // $request->session()->invalidate();
