@@ -11,6 +11,8 @@ use Illuminate\Support\Facades\Input;
 use Illuminate\Support\Facades\Schema;
 use Illuminate\Support\Facades\Hash;
 use App\Transaction;
+use App\User;
+
 
 class UserController extends BaseController
 {
@@ -30,37 +32,34 @@ class UserController extends BaseController
         );
     }
      public function store(Request $request)
-    {   dd($request);
-        $user = new Transaction();
-        $data = $this->validate($request, [
-            'sender_id' => 'required',
-            'receiver_id' => 'required',
-            'payment_date' => 'required',
-            'estimated_delivery_date' => 'required',
-            'account_number' => 'required',
-            'from_currency' => 'required',
-            'to_currency' => 'required',
-            'exchange_rate' => 'required',
-            'fee' => 'required',
-            'status' => 'required',
-            'remarks' => 'required',
-            'bank' => 'required',
-            'branch_name' => 'required',
-            'first_name' => 'required',
-            'middle_name' => 'required',
-            'last_name' => 'required',
-            'address_line' => 'required',
-            'cityOrTown' => 'required',
-            'recipient_country' => 'required',
-            'mobile' => 'required',
-            'emailID' => 'required',
-            'sending_reason' => 'required'
+    {  
+        // dd($request);
+
+        $transaction = new Transaction([
+            'sender_id' => Auth::user()->id,
+            'from_currency' => $request->get('curr1'),
+            'to_currency' => $request->get('curr2'),
+            'exchange_rate' => '101',
+            'fee' => '101',
+            'status' =>'101',
+            'remarks' => $request->get('description'),
+            'Recipient_bank_country' => $request->get('Recipient_bank_country'),
+            'bank' => $request->get('bank'),
+            'branch_name' => $request->get('branch_name'),
+            'account_number' => $request->get('account_number'),
+            'first_name' => $request->get('first_name'),
+            'middle_name' => $request->get('middle_name'),
+            'last_name' => $request->get('last_name'),
+            'address_line' => $request->get('address_line'),
+            'cityOrTown' => $request->get('cityOrTown'),
+            'recipient_country' => $request->get('recipient_country'),
+            'mobile' => $request->get('mobile'),
+            'emailID' => $request->get('emailID'),
+            'sending_reason' => $request->get('sending_reason')
+
         ]);
-
-        $user->saveUser($data);
-        return 'Success';
-        // return redirect('/dashboard/users')->with('success');
-
+        $transaction->save();
+        return redirect('/thank-you')->with('success', 'Transaction saved!');
     }
 }
  

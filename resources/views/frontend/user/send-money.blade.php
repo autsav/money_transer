@@ -37,58 +37,59 @@
                        <div class="col-md-15 col-lg-6 col-xl-5 mx-auto">
                            <div class="bg-light shadow-sm rounded p-3 p-sm-4 mb-4">
                                <h3 class="text-5 font-weight-400 mb-3">Recipient Bank Detail</h3>
+                              
                                <div class="form-group">
                                    <label for="recipient_bank_country">Country</label>
-                                   <input type="text" value="" class="form-control" data-bv-field="Recipient_bank_country" id="Recipient_bank_country" required placeholder="Select Country">
+                                   <input type="text" value="" class="form-control" data-bv-field="Recipient_bank_country" id="Recipient_bank_country" name="Recipient_bank_country" required placeholder="Select Country">
                                </div>
                                 <div class="form-group">
                                    <label for="bank">Bank</label>
-                                   <input type="text" value="" class="form-control" data-bv-field="bank" id="bank" required placeholder="Select Bank">
+                                   <input type="text" value="" class="form-control" data-bv-field="bank" id="bank" name="bank" required placeholder="Select Bank">
                                </div>
                                 <div class="form-group">
                                    <label for="branch_name">Branch Name</label>
-                                   <input type="text" value="" class="form-control" data-bv-field="branch_name" id="branch_name" required placeholder="Enter Branch Name">
+                                   <input type="text" value="" class="form-control" data-bv-field="branch_name" name="branch_name" id="branch_name" required placeholder="Enter Branch Name">
                                </div>
                                 <div class="form-group">
                                    <label for="account_number">Account Number</label>
-                                   <input type="number" value="" class="form-control" data-bv-field="account_number" id="account_number" required placeholder="Enter Account Number">
+                                   <input type="number" value="" class="form-control" data-bv-field="account_number" id="account_number" name="account_number" required placeholder="Enter Account Number">
                                </div>
                                <h3 class="text-5 font-weight-400 mb-3">Recipient Detail</h3>
                                 <div class="form-group">
                                    <label for="first_name">First Name</label>
-                                   <input type="text" value="" class="form-control" data-bv-field="first_name" id="first_name" required placeholder="Enter First Name">
+                                   <input type="text" value="" class="form-control" data-bv-field="first_name" id="first_name" name="first_name" required placeholder="Enter First Name">
                                </div>
                                 <div class="form-group">
                                    <label for="middle_name">Middle Name</label>
-                                   <input type="text" value="" class="form-control" data-bv-field="middle_name" id="middle_name" required placeholder="Enter Middle Name">
+                                   <input type="text" value="" class="form-control" data-bv-field="middle_name" id="middle_name" name="middle_name" required placeholder="Enter Middle Name">
                                </div>
                                 <div class="form-group">
                                    <label for="last_name">Last Name</label>
-                                   <input type="text" value="" class="form-control" data-bv-field="last_name" id="last_name" required placeholder="Enter Last Name">
+                                   <input type="text" value="" class="form-control" data-bv-field="last_name" id="last_name" name="last_name" required placeholder="Enter Last Name">
                                </div>
                                 <div class="form-group">
                                    <label for="address_line">Address Line 1</label>
-                                   <input type="text" value="" class="form-control" data-bv-field="address_line" id="address_line" required placeholder="Enter Address Line">
+                                   <input type="text" value="" class="form-control" data-bv-field="address_line" id="address_line" name="address_line" required placeholder="Enter Address Line">
                                </div>
                                 <div class="form-group">
                                    <label for="cityOrTown">City/Town</label>
-                                   <input type="text" value="" class="form-control" data-bv-field="cityOrTown" id="cityOrTown" required placeholder="Enter City or Town">
+                                   <input type="text" value="" class="form-control" data-bv-field="cityOrTown" id="cityOrTown" name="cityOrTown" required placeholder="Enter City or Town">
                                </div>
                                 <div class="form-group">
                                    <label for="recipient_country">Country</label>
-                                   <input type="text" value="" class="form-control" data-bv-field="recipient_country" id="recipient_country" required placeholder="Enter Recipient Country">
+                                   <input type="text" value="" class="form-control" data-bv-field="recipient_country" id="recipient_country" name="recipient_country" required placeholder="Enter Recipient Country">
                                </div>
                                 <div class="form-group">
                                    <label for="mobile">Mobile Phone</label>
-                                   <input type="number" value="" class="form-control" data-bv-field="mobile" id="mobile" required placeholder="Enter Mobile Number">
+                                   <input type="number" value="" class="form-control" data-bv-field="mobile" id="mobile" name="mobile" required placeholder="Enter Mobile Number">
                                </div>
                                 <div class="form-group">
                                    <label for="emailID">Email</label>
-                                   <input type="email" value="" class="form-control" data-bv-field="emailid" id="emailID" required placeholder="Enter Email Address">
+                                   <input type="email" value="" class="form-control" data-bv-field="emailid" id="emailID" name="emailID" required placeholder="Enter Email Address">
                                </div>
                                 <div class="form-group">
                                    <label for="sending_reason">Sending Reason</label>
-                                   <input type="text" value="" class="form-control" data-bv-field="sending_reason" id="sending_reason" required placeholder="Enter Sending Reason">
+                                   <input type="text" value="" class="form-control" data-bv-field="sending_reason" id="sending_reason" name="sending_reason" required placeholder="Enter Sending Reason">
                                </div>
                                <div class="row">
                                    <div class="col-sm-5">
@@ -110,7 +111,7 @@
                                <h3 class="text-5 font-weight-400 mb-3">Amount Detail</h3>
                                    <div class="form-group">
                                        <label for="description">Description</label>
-                                       <textarea class="form-control" rows="4" id="description" required placeholder="Payment Description"></textarea>
+                                       <textarea class="form-control" rows="4" id="description" required placeholder="Payment Description" name="description"></textarea>
                                    </div>
                                    <h3 class="text-5 font-weight-400 mb-3">Details</h3>
                                    <p class="mb-1">Send Amount <span class="text-3 float-right">1,000.00 USD</span></p>
