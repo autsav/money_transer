@@ -29,6 +29,9 @@ Route::post('/getExchangeResult', 'HomeController@getExchangeResult')->name('get
 Auth::routes(['verify' => true]);
 Route::middleware(['auth','verified'])->group(function() {
     Route::get('/send-money', 'UserController@send_money')->name('send-money');
+    Route::post('/store-transaction', 'UserController@store')->name('store-transaction');
+
+    
     Route::get('/dashboard', 'UserController@index')->name('dashboard');
 });
 

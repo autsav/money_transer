@@ -5,6 +5,8 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1.0, shrink-to-fit=no">
+      <meta name="csrf_token" content="{{csrf_token()}}">
+
     <link href="{{asset('images/favicon.png')}}" rel="icon" />
     <title>Siya Money Transfer - Easiest and Fastest way to transfer Money</title>
     <meta name="description" content="Money transfer is now easy and fast with very low fee. Transfer money easily almost anywhere in the world.">

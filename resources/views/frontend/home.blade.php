@@ -24,7 +24,7 @@
                                     @include('frontend.common.exchange-block')
                                     <p class="text-muted">The current exchange rate is <span class="font-weight-500">1 <span class="sendCurr"></span> = <span id="receiveRate"></span> <span id="receiveCurr"></span></span></p>
                                     <button class="btn btn-primary btn-block">Continue</button>
-                                </form>
+                                </form> 
                             </div>
                         </div>
                     </div>

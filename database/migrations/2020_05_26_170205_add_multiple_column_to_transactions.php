@@ -14,9 +14,6 @@ class AddMultipleColumnToTransactions extends Migration
     public function up()
     {
         Schema::table('transactions', function (Blueprint $table) {
-
-            $table->unsignedBigInteger('bank_id');
-            $table->foreign('bank_id')->references('id')->on('banks');
             $table->bigInteger('account_number');
             $table->string('fullname');
             $table->string('from_currency');
