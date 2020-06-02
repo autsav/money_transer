@@ -8,12 +8,12 @@
       <meta name="csrf_token" content="{{csrf_token()}}">
 
     <link href="{{asset('images/favicon.png')}}" rel="icon" />
-    <title>Siya Money Transfer - Easiest and Fastest way to transfer Money</title>
+    <title>{{@$title ? $title.' - Siya Money Transfer' : 'Siya Money Transfer - Easiest and Fastest way to transfer Money'}}</title>
     <meta name="description" content="Money transfer is now easy and fast with very low fee. Transfer money easily almost anywhere in the world.">
 
     <!-- Web Fonts
     ============================================= -->
-    <link rel='stylesheet' href='https://fonts.googleapis.com/css?family=Rubik:300,300i,400,400i,500,500i,700,700i,900,900i' type='text/css'>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,300;0,400;0,500;0,700;1,400;1,500&display=swap" rel="stylesheet">
 
     <!-- Stylesheet
     ============================================= -->
@@ -22,10 +22,11 @@
     @yield('styles')
     <link rel="stylesheet" type="text/css" href="{{asset('css/stylesheet.css')}}" />
     <style>
+        body, #main-wrapper{
+            background-color: #fff;
+        }
+
         @media(min-width:992px){
-            /*body{
-                overflow: hidden;
-            }*/
             .hero-wrap {
                 position: fixed;
                 top: 0;
@@ -63,8 +64,8 @@
                         </div>
                         <div class="row no-gutters my-auto">
                             <div class="col-10 col-lg-9 mx-auto">
-                                <h1 class="text-11 text-white mb-4">Welcome back!</h1>
-                                <p class="text-4 text-white line-height-4 mb-5">We are glad to see you again! Instant deposits, withdrawals & payouts trusted by millions worldwide.</p>
+                                <h1 class="text-11 text-white mb-4">Welcome!</h1>
+                                <p class="text-4 text-white line-height-4 mb-5">We are glad to see you! Instant deposits, withdrawals & payouts trusted by millions worldwide.</p>
                             </div>
                         </div>
                     </div>

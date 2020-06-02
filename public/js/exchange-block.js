@@ -6,6 +6,10 @@ $(document).on("keyup","#youSend, #recipientGets",function(){
     convertCurrency(this);
 });
 
+$(document).on("submit","#form-send-money", function(){
+   // alert();
+});
+
 function convertCurrency(instance){
     let currency1 = $("#youSendCurrency").val();
     let currency2 = $("#recipientCurrency").val();
@@ -53,7 +57,6 @@ function convertCurrency(instance){
 }
 
 function populateResult(targetInputInstance, currency1, currency2, exchangeResult){
-    console.log(exchangeResult);
     $(".sendCurr").text(currency1);
     $("#receiveCurr").text(currency2);
     $("#feeAmount").text(exchangeResult.feeAmount);

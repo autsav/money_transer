@@ -8,12 +8,12 @@
       <meta name="csrf_token" content="{{csrf_token()}}">
 
     <link href="{{asset('images/favicon.png')}}" rel="icon" />
-    <title>Siya Money Transfer - Easiest and Fastest way to transfer Money</title>
+    <title>{{@$title ? $title.' - Siya Money Transfer' : 'Siya Money Transfer - Easiest and Fastest way to transfer Money'}}</title>
     <meta name="description" content="Money transfer is now easy and fast with very low fee. Transfer money easily almost anywhere in the world.">
 
     <!-- Web Fonts
     ============================================= -->
-    <link rel='stylesheet' href='https://fonts.googleapis.com/css?family=Rubik:300,300i,400,400i,500,500i,700,700i,900,900i' type='text/css'>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,300;0,400;0,500;0,700;1,400;1,500&display=swap" rel="stylesheet">
 
     <!-- Stylesheet
     ============================================= -->
@@ -22,7 +22,8 @@
     <link rel="stylesheet" type="text/css" href="{{asset('vendor/bootstrap-select/css/bootstrap-select.css')}}" />
     <link rel="stylesheet" type="text/css" href="{{asset('vendor/currency-flags/css/currency-flags.min.css')}}" />
     <link rel="stylesheet" type="text/css" href="{{asset('vendor/owl.carousel/assets/owl.carousel.min.css')}}" />
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.0.0/animate.min.css"/>
+    <link rel="stylesheet" href="{{asset('css/animate.min.css')}}"/>
+    <link rel="stylesheet" type="text/css" href="{{asset('css/cookieconsent.min.css')}}" />
     @yield('styles')
     <link rel="stylesheet" type="text/css" href="{{asset('css/stylesheet.css')}}" />
 </head>
@@ -34,9 +35,33 @@
 </div>
 <!-- Preloader End -->
 
+<!--Start of Tawk.to Script-->
+<script type="text/javascript">
+    var Tawk_API=Tawk_API||{}, Tawk_LoadStart=new Date();
+    (function(){
+        var s1=document.createElement("script"),s0=document.getElementsByTagName("script")[0];
+        s1.async=true;
+        s1.src='https://embed.tawk.to/5ed5c98e8ee2956d73a6a650/default';
+        s1.charset='UTF-8';
+        s1.setAttribute('crossorigin','*');
+        s0.parentNode.insertBefore(s1,s0);
+    })();
+</script>
+<!--End of Tawk.to Script-->
+
 <!-- Document Wrapper
 ============================================= -->
 <div id="main-wrapper">
+    {{--<div class="cookie-notice">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col">By continuing to use our site you agree to our <a href="#">use of cookie</a> to support your experience</div>
+                <div class="col max-content">
+                    <button class="btn btn-link btn-close-cookie-notice" type="button"><i class="fas fa-times"></i></button>
+                </div>
+            </div>
+        </div>
+    </div>--}}
 
     <!-- Header
     ============================================= -->
@@ -46,7 +71,7 @@
                 <div class="header-column justify-content-start">
                     <!-- Logo
                     ============================= -->
-                    <div class="logo"> <a class="d-flex" href="{{route('home')}}" title="Siya Money Transfer"><img src="{{asset('images/logo.png')}}" alt="Siya Money Transfer" /></a> </div>
+                    <div class="logo"> <a class="d-flex" href="{{route('home')}}" title="{{config('app.name')}}"><img src="{{asset('images/logo.png')}}" alt="{{config('app.name')}}" /></a> </div>
                     <!-- Logo end -->
                     <!-- Collapse Button
                     ============================== -->
@@ -124,8 +149,24 @@
 <script src="{{asset('vendor/bootstrap/js/bootstrap.bundle.min.js')}}"></script>
 <script src="{{asset('vendor/bootstrap-select/js/bootstrap-select.min.js')}}"></script>
 <script src="{{asset('vendor/owl.carousel/owl.carousel.min.js')}}"></script>
+<script src="{{asset('js/cookieconsent.min.js')}}"></script>
 <script src="{{asset('js/theme.js')}}"></script>
+<script>
+    //cookie notice
+    window.cookieconsent.initialise({
+        "palette": {
+            "popup": {
+                "background": "#000"
+            },
+            "button": {
+                "background": "#fac80d"
+            }
+        },
+        "content": {
+            "href": "https://www.siyaexchange.com/cookie-policy"
+        }
+    });
+</script>
 @yield('scripts')
 </body>
-
 </html>

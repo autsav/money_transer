@@ -25,9 +25,8 @@
                 </div>
                 <div class="col-lg d-lg-flex align-items-center justify-content-lg-end">
                     <ul class="nav justify-content-center">
-                        <li class="nav-item"> <a class="nav-link active" href="#">Security</a></li>
-                        <li class="nav-item"> <a class="nav-link" href="#">Terms</a></li>
-                        <li class="nav-item"> <a class="nav-link" href="#">Privacy</a></li>
+                        <li class="nav-item"> <a class="nav-link active" href="{{route('privacy-policy')}}">Privacy Policy</a></li>
+                        <li class="nav-item"> <a class="nav-link" href="{{route('cookie-policy')}}">Cookie Policy</a></li>
                     </ul>
                 </div>
             </div>

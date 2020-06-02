@@ -1,13 +1,15 @@
+@php($title = "Login")
+
 @extends('frontend.layouts.auth-base')
 
 @section('content')
-    <h3 class="font-weight-400 mb-4">Log In</h3>
-    <form action="{{route('login')}}" method="POST">
+    <h3 class="mb-4">Log In</h3>
+    <form class="validate" action="{{route('login')}}" method="POST">
         @csrf
         <div class="form-group">
             <label for="emailAddress">Email Address</label>
             <input type="email" class="form-control @error('email') is-invalid @enderror" name="email" id="emailAddress"
-                   required placeholder="Enter Your Email" value="{{ old('email') }}" autocomplete="email" autofocus>
+                   required value="{{ old('email') }}" autocomplete="email" autofocus>
             @error('email')
             <span class="invalid-feedback" role="alert">{{ $message }}</span>
             @enderror
@@ -15,7 +17,7 @@
         <div class="form-group">
             <label for="loginPassword">Password</label>
             <input type="password" name="password" class="form-control @error('password') is-invalid @enderror"
-                   id="loginPassword" required placeholder="Enter Password" autocomplete="current-password">
+                   id="loginPassword" required autocomplete="current-password">
             @error('password')
             <span class="invalid-feedback" role="alert">{{ $message }}</span>
             @enderror

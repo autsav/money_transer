@@ -23,6 +23,7 @@ class UserController extends BaseController
     public function send_money(){
         $currencies = ExchangeRate::pluck("currency_code");
         return view('frontend.user.send-money')->with([
+                "title" => "Send Money",
                 "currencies" => $currencies,
                 "currencySubText" => $this->currencySubText,
                 "popularCurrency" => $this->popularCurrency,
@@ -31,6 +32,7 @@ class UserController extends BaseController
             ]
         );
     }
+
      public function store(Request $request)
     {  
         // dd($request);
@@ -60,6 +62,14 @@ class UserController extends BaseController
         ]);
         $transaction->save();
         return redirect('/thank-you')->with('success', 'Transaction saved!');
+    }
+
+    public function transactions(){
+         return view("frontend.user.transactions");
+    }
+
+    public function profile(){
+        return view("frontend.user.profile");
     }
 }
  

@@ -3,6 +3,7 @@
 namespace App\Console\Commands;
 
 use App\ExchangeRate;
+use Carbon\Carbon;
 use Illuminate\Console\Command;
 
 class UpdateExchangeRate extends Command
@@ -57,7 +58,7 @@ class UpdateExchangeRate extends Command
         //update data to database
         if($exchangeRates['success']){
             foreach ($exchangeRates['rates'] as $key=>$value){
-                $row = ["currency_code"=>$key, "rate"=>$exchangeRates['rates'][$key]];
+                $row = ["currency_code"=>$key, "rate"=>$exchangeRates['rates'][$key], "last_updated_at"=>Carbon::now()];
                 array_push($rows, $row);
             }
 

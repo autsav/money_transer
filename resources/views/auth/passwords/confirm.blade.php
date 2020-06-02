@@ -1,3 +1,5 @@
+@php($title = "Confirm Reset Password")
+
 @extends('layouts.app')
 
 @section('content')

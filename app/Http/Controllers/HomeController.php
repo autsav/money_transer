@@ -22,17 +22,27 @@ class HomeController extends BaseController
 
     public function about()
     {
-        return view('frontend.about');
+        return view('frontend.about')->with(['title'=>'About Us']);
     }
 
     public function help()
     {
-        return view('frontend.help');
+        return view('frontend.help')->with(['title'=>'Help Policy']);
     }
 
     public function contact()
     {
-        return view('frontend.contact');
+        return view('frontend.contact')->with(['title'=>'Contact']);
+    }
+
+    public function privacy_policy()
+    {
+        return view('frontend.privacy-policy')->with(['title'=>'Privacy Policy']);
+    }
+
+    public function cookie_policy()
+    {
+        return view('frontend.cookie-policy')->with(['title'=>'Cookie Policy']);
     }
 
     public function getExchangeResult(Request $request){

@@ -1,3 +1,5 @@
+@php($title = "Reset Password")
+
 @extends('frontend.layouts.auth-base')
 
 @section('content')

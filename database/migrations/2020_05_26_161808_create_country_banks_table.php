@@ -15,7 +15,7 @@ class CreateCountryBanksTable extends Migration
     {
         Schema::create('country_banks', function (Blueprint $table) {
             $table->id();
-             $table->unsignedBigInteger('county_id');
+            $table->unsignedBigInteger('country_id');
              $table->foreign('country_id')->references('id')->on('countries');
 
             $table->unsignedBigInteger('bank_id');

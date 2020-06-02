@@ -15,8 +15,8 @@ class CreateTransactionsTable extends Migration
     {
         Schema::create('transactions', function (Blueprint $table) {
             $table->id();
-            $table->bigint('sender_id');
-            $table->bigint('receiver_id');
+            $table->bigInteger('sender_id');
+            $table->bigInteger('receiver_id');
             $table->timestamp('payment_date')->nullable();
             $table->timestamp('estimated_delivery_date')->nullable();
             $table->timestamps();

@@ -92,10 +92,10 @@
                                    <input type="text" value="" class="form-control" data-bv-field="sending_reason" id="sending_reason" name="sending_reason" required placeholder="Enter Sending Reason">
                                </div>
                                <div class="row">
-                                   <div class="col-sm-5">
+                                   <div class="col-5">
                                        <button type="button" class="btn btn-outline-primary btn-block btn-back">Back</button>
                                    </div>
-                                   <div class="col-sm-7">
+                                   <div class="col-7">
                                        <button type="button" class="btn btn-primary btn-block btn-continue">Continue</button>
                                    </div>
                                </div>
@@ -119,10 +119,10 @@
                                    <hr>
                                    <p class="font-weight-500">Total<span class="text-3 float-right">1,007.21 USD</span></p>
                                <div class="row">
-                                   <div class="col-sm-5">
+                                   <div class="col-5">
                                        <button type="button" class="btn btn-outline-primary btn-block btn-back">Back</button>
                                    </div>
-                                   <div class="col-sm-7">
+                                   <div class="col-7">
                                        <button type="submit" class="btn btn-primary btn-block">Send Money</button>
                                    </div>
                                </div>
@@ -131,6 +131,9 @@
                    </div>
                </div>
            </div>
+              <div class="text-center">
+                  <button class="btn btn-link p-0 btn-reset" type="button">Cancel</button>
+              </div>
           </form>
         </div>
     </div>
@@ -144,41 +147,9 @@
         const exchangeRoute = '{{route('getExchangeResult')}}';
         const csrf_token = "{{csrf_token()}}";
 
-        const curr1 = "{{$_GET['curr1']}}";
-        const curr2 = "{{$_GET['curr2']}}";
-        const initSendVal = '{{$_GET['amount']}}' || 1000;
-
-        $("#youSendCurrency").val(curr1);
-        $("#recipientCurrency").val(curr2);
-
-        $(function(){
-            $("#youSend").val(initSendVal).trigger("keyup");
-            $("#form-send-money").validate({
-                ignore: ':hidden'
-            });
-        });
-
-        //go prev
-        $("#form-send-money .btn-back").click(function () {
-            let target = $(this).closest(".step").hide().prev(".step");
-            target.show().addClass("animate__fadeIn");
-            setStepMenuActive(target);
-        });
-
-        //validate and go next
-        $("#form-send-money .btn-continue").click(function () {
-            if($(this).closest("form").valid() && !$("#youSend").hasClass("err")){
-                let target = $(this).closest(".step").hide().next(".step")
-                target.show().addClass("animate__fadeIn");
-                setStepMenuActive(target);
-            }
-        });
-
-        function setStepMenuActive(target){
-            let id = target.attr("id");
-            $(".secondary-nav a").removeClass("active");
-            $(".secondary-nav a[href='#"+id+"']").addClass("active");
-            $(window).scrollTop(0);
-        }
+        const curr1 = "{{@$_GET['curr1']}}" || 'USD';
+        const curr2 = "{{@$_GET['curr2']}}" || 'AUD';
+        const initSendVal = '{{@$_GET['amount']}}' || 1000;
     </script>
+    <script src="{{asset('js/send-money.js')}}"></script>
 @endsection

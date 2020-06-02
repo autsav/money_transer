@@ -23,6 +23,8 @@ Route::get('/verification', 'VerificationrController@index')->name('verification
 Route::get('/about-us', 'HomeController@about')->name('about');
 Route::get('/help', 'HomeController@help')->name('help');
 Route::get('/contact-us', 'HomeController@contact')->name('contact');
+Route::get('/privacy-policy', 'HomeController@privacy_policy')->name('privacy-policy');
+Route::get('/cookie-policy', 'HomeController@cookie_policy')->name('cookie-policy');
 Route::post('/getExchangeResult', 'HomeController@getExchangeResult')->name('getExchangeResult');
 
 // User auth routes
@@ -33,6 +35,8 @@ Route::middleware(['auth','verified'])->group(function() {
 
     
     Route::get('/dashboard', 'UserController@index')->name('dashboard');
+    Route::get('/profile', 'UserController@profile')->name('profile');
+    Route::get('/transactions', 'UserController@transactions')->name('transactions');
 });
 
 

@@ -8,7 +8,7 @@ body, html {
 body {
   background: #f5f5f5;
   color: #4c4d4d;
-  font-family: "Rubik", sans-serif;
+  font-family: 'Roboto', sans-serif;
   font-size: 14px;
   line-height: 22px;
 }
@@ -62,13 +62,18 @@ iframe {
 }
 
 h1, h2, h3, h4, h5, h6 {
-  color: #1e1d1c;
-  font-family: "Rubik", sans-serif;
+  color: #290a07;
+  font-family: 'Roboto', sans-serif;
+  font-weight: 600;
 }
 
 .lead {
   font-size: 1.3em;
   line-height: 1.8;
+}
+
+.icon-lg{
+  font-size: 40px;
 }
 
 /*-------- Preloader --------*/
@@ -141,108 +146,108 @@ h1, h2, h3, h4, h5, h6 {
 
 /* Text Size */
 .text-0 {
+  font-size: 10px !important;
+  font-size: 0.625rem !important;
+}
+
+.text-1 {
   font-size: 11px !important;
   font-size: 0.6875rem !important;
 }
 
-.text-1 {
+.text-2 {
   font-size: 12px !important;
   font-size: 0.75rem !important;
 }
 
-.text-2 {
+.text-3 {
   font-size: 14px !important;
   font-size: 0.875rem !important;
 }
 
-.text-3 {
+.text-4 {
   font-size: 16px !important;
   font-size: 1rem !important;
 }
 
-.text-4 {
+.text-5 {
   font-size: 18px !important;
   font-size: 1.125rem !important;
 }
 
-.text-5 {
+.text-6 {
   font-size: 21px !important;
   font-size: 1.3125rem !important;
 }
 
-.text-6 {
+.text-7 {
   font-size: 24px !important;
-  font-size: 1.50rem !important;
+  font-size: 1.505rem !important;
 }
 
-.text-7 {
+.text-8 {
   font-size: 28px !important;
   font-size: 1.75rem !important;
 }
 
-.text-8 {
+.text-9 {
   font-size: 32px !important;
   font-size: 2rem !important;
 }
 
-.text-9 {
+.text-10 {
   font-size: 36px !important;
   font-size: 2.25rem !important;
 }
 
-.text-10 {
+.text-11 {
   font-size: 40px !important;
   font-size: 2.50rem !important;
 }
 
-.text-11 {
+.text-12 {
   font-size: 44px !important;
   font-size: 2.75rem !important;
 }
 
-.text-12 {
+.text-13 {
   font-size: 48px !important;
   font-size: 3rem !important;
 }
 
-.text-13 {
+.text-14 {
   font-size: 52px !important;
   font-size: 3.25rem !important;
 }
 
-.text-14 {
+.text-15 {
   font-size: 56px !important;
   font-size: 3.50rem !important;
 }
 
-.text-15 {
+.text-16 {
   font-size: 60px !important;
   font-size: 3.75rem !important;
 }
 
-.text-16 {
+.text-17 {
   font-size: 64px !important;
   font-size: 4rem !important;
 }
 
-.text-17 {
+.text-18 {
   font-size: 72px !important;
   font-size: 4.5rem !important;
 }
 
-.text-18 {
+.text-19 {
   font-size: 80px !important;
   font-size: 5rem !important;
 }
 
-.text-19 {
+.text-20 {
   font-size: 84px !important;
   font-size: 5.25rem !important;
-}
-
-.text-20 {
-  font-size: 92px !important;
-  font-size: 5.75rem !important;
 }
 
 /* Line height */
@@ -1086,9 +1091,10 @@ hr {
 }
 
 .transaction-title {
-  background-color: #f1f5f6;
-  border-top: 1px solid #e9eff0;
-  border-bottom: 1px solid #e9eff0;
+  background-color: #fac80d;
+  border-top: 1px solid #fac80d;
+  border-bottom: 1px solid #fac80d;
+  color: #fff;
 }
 
 .transaction-item {
@@ -2420,7 +2426,7 @@ h2.resp-accordion:first-child {
   position: fixed;
   z-index: 1030;
   bottom: 8px;
-  right: 10px;
+  right: 110px;
   background-color: rgba(0, 0, 0, 0.2);
   text-align: center;
   color: #fff;
@@ -2508,9 +2514,13 @@ select.form-control:not([size]):not([multiple]):not(.form-control-sm) {
   height: 3.00rem;
 }
 
+.form-control:focus {
+  border-color: #fac80d;
+}
+
 .form-control:focus, .custom-select:focus {
-  -webkit-box-shadow: 0 0 5px rgba(128, 189, 255, 0.5);
-  box-shadow: 0 0 5px rgba(128, 189, 255, 0.5);
+  -webkit-box-shadow: 0 0 5px rgba(250, 200, 13, 0.5);
+  box-shadow: 0 0 5px rgba(250, 200, 13, 0.5);
 }
 
 .form-control:focus[readonly] {
@@ -2544,6 +2554,7 @@ select.form-control:not([size]):not([multiple]):not(.form-control-sm) {
   font-weight: 500;
   -webkit-transition: all 0.5s ease;
   transition: all 0.5s ease;
+  font-size: 0.875rem;
 }
 
 .btn-sm {
@@ -2695,6 +2706,12 @@ a.bg-primary:focus, a.bg-primary:hover, button.bg-primary:focus, button.bg-prima
   color: #f3b603;
 }
 
+.alert-success {
+  color: #2d9244;
+  background-color: #e4ffeb;
+  border-color: #d6fbe0;
+}
+
 /* Pagination */
 .page-link {
   border: none;
@@ -2843,4 +2860,26 @@ a.bg-primary:focus, a.bg-primary:hover, button.bg-primary:focus, button.bg-prima
 
 .bootstrap-select .dropdown-menu li a span.text{
   line-height: 14px;
+}
+
+.max-content{
+  max-width: max-content;
+}
+
+@media (max-width: 575px){
+  .secondary-nav.nav .nav-link {
+    font-size: 14px;
+    padding: 1rem 10px;
+  }
+}
+
+.more-detail{
+  max-height: 230px;
+  overflow: auto;
+  overflow-x: hidden;
+}
+
+.transaction-filter{
+  max-width: 600px;
+  display: block;
 }
