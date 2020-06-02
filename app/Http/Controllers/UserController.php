@@ -12,19 +12,27 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Support\Facades\Hash;
 use App\Transaction;
 use App\User;
+use App\Bank;
+use App\Country;
+
 
 
 class UserController extends BaseController
 {
      public function index(){
+      
         return view('frontend.user.dashboard');
     }
 
     public function send_money(){
+        $banks = Bank::all();
+        $countries = Country::all();
         $currencies = ExchangeRate::pluck("currency_code");
         return view('frontend.user.send-money')->with([
                 "title" => "Send Money",
                 "currencies" => $currencies,
+                "banks" => $banks,
+                "countries" => $countries,
                 "currencySubText" => $this->currencySubText,
                 "popularCurrency" => $this->popularCurrency,
                 "defaultFromCurrency" => $this->defaultFromCurrency,

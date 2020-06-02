@@ -40,11 +40,21 @@
                               
                                <div class="form-group">
                                    <label for="recipient_bank_country">Country</label>
-                                   <input type="text" value="" class="form-control" data-bv-field="Recipient_bank_country" id="Recipient_bank_country" name="Recipient_bank_country" required placeholder="Select Country">
+                                    <select id="Recipient_bank_country" name="Recipient_bank_country" class="form-control" placeholder="Select Country">
+                                   @foreach ($countries as $country)
+                                      <option>{{ $country->name }}</option>
+                                      @endforeach
+                                     </select>
+
+                                  
                                </div>
                                 <div class="form-group">
                                    <label for="bank">Bank</label>
-                                   <input type="text" value="" class="form-control" data-bv-field="bank" id="bank" name="bank" required placeholder="Select Bank">
+                                   <select name="bank" id="bank" class="form-control" placeholder="Select Bank">
+                                   @foreach ($banks as $bank)
+                                      <option>{{ $bank->name }}</option>
+                                      @endforeach
+                                     </select>
                                </div>
                                 <div class="form-group">
                                    <label for="branch_name">Branch Name</label>
@@ -77,7 +87,12 @@
                                </div>
                                 <div class="form-group">
                                    <label for="recipient_country">Country</label>
-                                   <input type="text" value="" class="form-control" data-bv-field="recipient_country" id="recipient_country" name="recipient_country" required placeholder="Enter Recipient Country">
+                                    <select id="recipient_country" name="recipient_country" class="form-control" placeholder="Enter Recipient Country">
+                                   @foreach ($countries as $country)
+                                      <option>{{ $country->name }}</option>
+                                      @endforeach
+                                     </select>
+                                  
                                </div>
                                 <div class="form-group">
                                    <label for="mobile">Mobile Phone</label>
@@ -151,5 +166,25 @@
         const curr2 = "{{@$_GET['curr2']}}" || 'AUD';
         const initSendVal = '{{@$_GET['amount']}}' || 1000;
     </script>
+
     <script src="{{asset('js/send-money.js')}}"></script>
+
+    <script>
+    $(function() {
+        $('select[name=Recipient_bank_country]').change(function() {
+
+            var url = '{{ url('Recipient_bank_country') }}' + $(this).val() + '/banks/';
+
+            $.get(url, function(data) {
+                var select = $('form select[name= bank]');
+
+                select.empty();
+
+                $.each(data,function(key, value) {
+                    select.append('<option value=' + value.id + '>' + value.name + '</option>');
+                });
+            });
+        });
+    });
+</script>
 @endsection
